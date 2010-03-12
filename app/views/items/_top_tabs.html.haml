@@ -1,0 +1,164 @@
+#tabsN
+  %ul#description
+    %li#current.TabbedPanelsTab{ :group => "description" }
+      %a{ :href => "javascript:mostrarDescripcion();cambiarEstilos('HDescripci?n',0,'description')" }
+        %span
+          = t :descripcion
+    %li.TabbedPanelsTab{ :group => "description" }
+      %a{ :href => "javascript:mostrarFicha();cambiarEstilos('HFichat?cnica',0,'description')" }
+        %span
+          = t 'catalog.product.tab'
+    %li#HOpinionesdelproducto.TabbedPanelsTab{ :group => "description" }
+      %a{ :href => "javascript:mostrarOpiniones();cambiarEstilos('HOpinionesdelproducto',0,'description')" }
+        %span
+          %img{ :border => "0", :src => "http://img.mlstatic.com/org-img/listados/new/rank#{@product.get_balls_image_link}.gif" }
+          = t 'catalog.reviews.tab', :count => @reviews.length
+          /
+            http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP
+#descriptionCont
+  #Descripcion.contentbox
+    = @item.description
+    /
+#Fichatecnica.contentbox{ :align => "center", :style => "display: none;" }
+  #catalogTab
+    #fichasolapa
+      .fondonobg
+        %h2
+          = t 'catalog.product.title'
+      #attr
+        - for attribute in @catalogProductAttrs do
+        %ul.ul_simple
+          %li.li_simple
+            %b
+              = attribute.key
+              \:
+          %li.li_simple_2
+            = attribute.value
+        - end
+      #printspecs.printCatalog
+        %a{ :href => "javascript:print();" }
+          = t 'catalog.product.print'
+      .Spacer
+#reviewsTab.contentbox{ :style => "display: none;" }
+  #solopis
+    .fondo
+      %h2
+        = t 'catalog.reviews.title'
+    #attr{ :style => "margin-top: 10px;" }
+      /
+        STARS
+      #promedio
+        %h3
+          = t 'catalog.reviews.promedio'
+        %span.promedio
+          %img{ :src => "/org-img/reviews/#{@product.get_balls_image_link}BALLSON.gif", :align => "absbottom" }
+          %br
+          = t 'catalog.reviews.resumen', :count => @reviews.length
+      #distribucion
+        %h3
+          = t 'catalog.reviews.distribucion'
+        .marcadores
+          = t 'catalog.reviews.puntaje'
+          %br
+          .lblquant
+            = t 'catalog.reviews.opiniones'
+        .colstar
+          %img{ :src => "/org-img/reviews/5BALLSON.gif", :align => "absbottom" }
+          %br
+          .quant
+            = @product.qty5
+        .colstar
+          %img{ :src => "/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
+          %br
+          .quant
+            = @product.qty4
+        .colstar
+          %img{ :src => "/org-img/reviews/3BALLSON.gif", :align => "absbottom" }
+          %br
+          .quant
+            = @product.qty3
+        .colstar
+          %img{ :src => "/org-img/reviews/2BALLSON.gif", :align => "absbottom" }
+          %br
+          .quant
+            = @product.qty2
+        .colstar
+          %img{ :src => "/org-img/reviews/1BALLSON.gif", :align => "absbottom" }
+          %br
+          .quant
+            = @product.qty1
+      #separador
+      .Spacer
+    .Spacer
+    #list_reviews
+      %a{ :name => "tab405825" }
+      - for review in @reviews do
+      .contopinion
+        .titcalif
+          .opcalif
+            %img{ :src => "/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
+            |
+          .optitle{ :style => "" }
+            = review.title
+        .opbody
+          .opautor
+            %span.autor_rev_link
+              = t 'catalog.reviews.autor'
+              \:
+              %b
+                = review.customer.nickname
+                (
+                = review.customer.points
+                )
+          .proscons
+            .pros
+              %b
+                = t 'catalog.reviews.pros'
+                \:
+              %br
+              = new_line_to_br review.pros
+            .contras
+              %b
+                = t 'catalog.reviews.contras'
+                \:
+              %br
+              = new_line_to_br review.contras
+          .opconcl
+            %p
+              %b
+                = t 'catalog.reviews.conclusion'
+                \:
+              %br
+              = new_line_to_br review.conclusion
+          .rbroundbox
+            .rbtop
+              %div
+            .rbcontent
+              .opvote
+                #votacion405825.votaciondiv{ :style => "display: block;" }
+                  .votetxt
+                    = t 'catalog.reviews.util'
+                  .btndiv
+                    %input.btnSI{ :name => "si", :onclick => "javascript:voteReview('405825',true);", :value => "S?", :type => "button" }
+                  .btndiv
+                    %input.btnNO{ :name => "no", :onclick => "javascript:voteReview('405825',false);", :value => "No", :type => "button" }
+                #notReg{ :style => "margin: 5px 0pt; display: none;" }
+                  ?Te result? ?til esta opini?n?
+                  %img{ :src => "/org-img/t.gif", :width => "8" }
+                  %input{ :name => "si", :onclick => "login('405825',true);", :value => "S?", :src => "/org-img/catalog/pdp/votar_si.gif", :height => "28", :type => "image", :width => "32" }
+                  %input{ :name => "no", :onclick => "login('405825',false);", :value => "No", :src => "/org-img/catalog/pdp/votar_no.gif", :height => "28", :type => "image", :width => "32" }
+                #error{ :style => "display: none;" }
+                  /
+                    \##MSJ_ERROR##
+              #votos405825.oputil
+                %b
+                  = review.qty_pos
+                = t 'catalog.reviews.resume', :count => review.qty_votes
+              #footerReview405825.tks
+            .rbbot
+              %div
+          .opdenu
+            .link_opden
+            %a{ :href => "http://www.mercadolibre.com.ar/argentina/ml/org_ayuda.main?as_new_tkt=2190&amp;as_faq_rvw_id=405825&amp;as_subject=Esta+opinion+no+cumple+con+las+politicas+del+sitio" }
+              Denunciar opini?n
+      - end
