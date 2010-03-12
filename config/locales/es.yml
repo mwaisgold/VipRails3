@@ -1,0 +1,104 @@
+es:
+  inicio: "Inicio"
+  registrate: "Regístrate"
+  vender: "Vender"
+  mi_ml: "Mi MercadoLibre"
+  ayuda: "Ayuda"
+  precio: "Precioñ"
+  ubicacion: "Ubicación"
+  tucompra: "Tu compra está protegida"
+  vendedor: "Vendedor"
+  calificacion: "Calificación del vendedor"
+  puntos: "Puntos"
+  ventas: "Ventas de este artículo"
+  descripcion: "Descripción"
+  publicacion: "Publicación"
+  sobre_ml: "Sobre MercadoLibre"
+  mapa: "Mapa del sitio"
+  politicas: "Politicas"
+  centro: "Centro de seguridad"
+  programa: "Programa de Protección al Comprador"
+  opiniones: "Opiniones y Cátalogo"
+  argentina: "Argentina"
+  brasil: "Brasil"
+  colombia: "Colombia"
+  costarica: "Costa Rica"
+  chile: "Chile"
+  ebay: "eBay"
+  ecuador: "Ecuador"
+  mexico: "México"
+  panama: "Panamá"
+  peru: "Perú"
+  repdominicana: "Rep. Dominicana"
+  uruguay: "Uruguay"
+  venezuela: "Venezuela"
+  preferencia_pago: "Preferencias de pago y envío"
+  texto_pago: "Pago"
+  texto_envio: "Envío"
+  texto_cuotas: "Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia"
+  hasta: hasta ${{valor}}
+
+  catalog:
+    product:
+      tab: "Ficha técnica"
+      title: "Especificaciones"
+      print: "Imprimir ficha t?cnica"
+    reviews:
+      tab:
+        one: "1 opinión"
+        other: '{{count}} opiniones'
+      title: "Opiniones"
+      promedio: "Promedio"
+      resumen:
+        one: "de <b>1 opinión</b>"
+        other: 'de <b>{{count}} opiniones</b>'
+      distribucion: "Distribuci?n del puntaje"
+      puntaje: "Puntaje"
+      opiniones: "Opiniones"
+      autor: "Autor"
+      pros: "Pros"
+      contras: "Contras"
+      conclusion: "Conclusión"
+      util: "?Te resultó útil esta opini?n?"
+      resume:
+        one: "de 1 usuario <b>votó como útil esta opinión</b>"
+        other: "de {{count}} usuarios <b>votaron como útil esta opinión</b>"
+      denuncia: "Denunciar opinión"
+  
+  questions:
+    questions_to_seller: "Preguntas al vendedor"
+    buyer_califications: "Calificaciones de compradores"
+    question: "Pregunta"
+    answer: "Respuesta"
+    denounce: "Denunciar"
+    ask_a_seller: "Hacer una pregunta al vendedor"
+
+  califications:
+    calif: "Calificaciones recibidas por la venta de este artículo."
+    view_all: "Ver todas las calificaciones"
+
+  app:
+    render_time: %0.0f ms
+
+  time:
+    pm: "pm"
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%d/%m/%Y %H:%M"
+
+  date:
+    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    month_names: [~, Enero,Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+
+  items_seller:
+    more_items: "Más publicaciones del vendedor"
+    view_more: "Ver más"
+
+  education:
+    learn: "Aprende sobre MercadoLibre"
+    how_to_buy: "Cómo Comprar"
+    advices: "Consejos para una transacción exitosa"
+    why_ml: "Por qué MercadoLibre es seguro"
+    how_pay: "Cómo pago mi compra"

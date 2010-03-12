@@ -4,12 +4,11 @@
       %span#listButton{ :style => "position: relative; width: 250px; height: 20px;" }
     .breadcrumb
       - for category in @categories
-      - if !category.category.nil?
-      %img{ :src => "/org-img/prod/arrow_categ.gif", :border => "0", :height => "10", :width => "13" }
-      - end
-      %a.path1{ :href => "/jm/search?as_categ_id=#{category.id}" }
+        - if !category.category.nil?
+          %img{ :src => "/org-img/prod/arrow_categ.gif", :border => "0", :height => "10", :width => "13" }
+      
+        %a.path1{ :href => "/jm/search?as_categ_id=#{category.id}" }
         = category.name
-      - end
 /
   PREHEADER
 %div
@@ -25,7 +24,7 @@
               %td#tdMainImg{ :align => "center", :width => "280", :height => "280" }
                 #divMainImg{ :style => "display:inline" }
                   %a#linkMainImg{ :href => "javascript:showVisor()" }
-                    %img#mainImg{ :src => "http://www.mercadolibre.com.ar/jm/img?s=MLA&f=#{h @item.image}&v=E", :border => "none", :align => "top", :alt => h @item.title, :title => h @item.title }
+                    %img#mainImg{ :src => "http://www.mercadolibre.com.ar/jm/img?s=MLA&f=#{@item.image}&v=E", :border => "none", :align => "top", :alt => @item.title, :title => @item.title }
       %td{ :width => "59%", :valign => "top", :style => "padding:0 5px 0 10px;" }
         %h1
           = h @item.title
@@ -85,19 +84,17 @@
                       #caja_pos
                         %span#link_pos
                           - if Integer(@customer.qty_calif) > 0 then
-                          (
-                          = Integer(@customer.points) * 100 / Integer(@customer.qty_calif)
-                          \%
-                          - end
+                            (
+                            = Integer(@customer.points) * 100 / Integer(@customer.qty_calif)
+                            \%                          
                         %span#img_pos.pos
                         )
                       #caja_neg
                         %span#link_neg
                           - if Integer(@customer.qty_calif) > 0 then
-                          (
-                          = 100 - Integer(@customer.points) * 100 / Integer(@customer.qty_calif)
-                          \%
-                        - end
+                            (
+                            = 100 - Integer(@customer.points) * 100 / Integer(@customer.qty_calif)
+                            \%                        
                         %span#img_neg.neg
                         )
                   %br

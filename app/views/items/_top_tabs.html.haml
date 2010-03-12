@@ -27,14 +27,13 @@
           = t 'catalog.product.title'
       #attr
         - for attribute in @catalogProductAttrs do
-        %ul.ul_simple
-          %li.li_simple
-            %b
-              = attribute.key
-              \:
-          %li.li_simple_2
-            = attribute.value
-        - end
+          %ul.ul_simple
+            %li.li_simple
+              %b
+                = attribute.key
+                \:
+            %li.li_simple_2
+              = attribute.value
       #printspecs.printCatalog
         %a{ :href => "javascript:print();" }
           = t 'catalog.product.print'
@@ -93,72 +92,71 @@
     #list_reviews
       %a{ :name => "tab405825" }
       - for review in @reviews do
-      .contopinion
-        .titcalif
-          .opcalif
-            %img{ :src => "/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
-            |
-          .optitle{ :style => "" }
-            = review.title
-        .opbody
-          .opautor
-            %span.autor_rev_link
-              = t 'catalog.reviews.autor'
-              \:
-              %b
-                = review.customer.nickname
-                (
-                = review.customer.points
-                )
-          .proscons
-            .pros
-              %b
-                = t 'catalog.reviews.pros'
+        .contopinion
+          .titcalif
+            .opcalif
+              %img{ :src => "/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
+              |
+            .optitle{ :style => "" }
+              = review.title
+          .opbody
+            .opautor
+              %span.autor_rev_link
+                = t 'catalog.reviews.autor'
                 \:
-              %br
-              = new_line_to_br review.pros
-            .contras
-              %b
-                = t 'catalog.reviews.contras'
-                \:
-              %br
-              = new_line_to_br review.contras
-          .opconcl
-            %p
-              %b
-                = t 'catalog.reviews.conclusion'
-                \:
-              %br
-              = new_line_to_br review.conclusion
-          .rbroundbox
-            .rbtop
-              %div
-            .rbcontent
-              .opvote
-                #votacion405825.votaciondiv{ :style => "display: block;" }
-                  .votetxt
-                    = t 'catalog.reviews.util'
-                  .btndiv
-                    %input.btnSI{ :name => "si", :onclick => "javascript:voteReview('405825',true);", :value => "S?", :type => "button" }
-                  .btndiv
-                    %input.btnNO{ :name => "no", :onclick => "javascript:voteReview('405825',false);", :value => "No", :type => "button" }
-                #notReg{ :style => "margin: 5px 0pt; display: none;" }
-                  ?Te result? ?til esta opini?n?
-                  %img{ :src => "/org-img/t.gif", :width => "8" }
-                  %input{ :name => "si", :onclick => "login('405825',true);", :value => "S?", :src => "/org-img/catalog/pdp/votar_si.gif", :height => "28", :type => "image", :width => "32" }
-                  %input{ :name => "no", :onclick => "login('405825',false);", :value => "No", :src => "/org-img/catalog/pdp/votar_no.gif", :height => "28", :type => "image", :width => "32" }
-                #error{ :style => "display: none;" }
-                  /
-                    \##MSJ_ERROR##
-              #votos405825.oputil
                 %b
-                  = review.qty_pos
-                = t 'catalog.reviews.resume', :count => review.qty_votes
-              #footerReview405825.tks
-            .rbbot
-              %div
-          .opdenu
-            .link_opden
-            %a{ :href => "http://www.mercadolibre.com.ar/argentina/ml/org_ayuda.main?as_new_tkt=2190&amp;as_faq_rvw_id=405825&amp;as_subject=Esta+opinion+no+cumple+con+las+politicas+del+sitio" }
-              Denunciar opini?n
-      - end
+                  = review.customer.nickname
+                  (
+                  = review.customer.points
+                  )
+            .proscons
+              .pros
+                %b
+                  = t 'catalog.reviews.pros'
+                  \:
+                %br
+                = new_line_to_br review.pros
+              .contras
+                %b
+                  = t 'catalog.reviews.contras'
+                  \:
+                %br
+                = new_line_to_br review.contras
+            .opconcl
+              %p
+                %b
+                  = t 'catalog.reviews.conclusion'
+                  \:
+                %br
+                = new_line_to_br review.conclusion
+            .rbroundbox
+              .rbtop
+                %div
+              .rbcontent
+                .opvote
+                  #votacion405825.votaciondiv{ :style => "display: block;" }
+                    .votetxt
+                      = t 'catalog.reviews.util'
+                    .btndiv
+                      %input.btnSI{ :name => "si", :onclick => "javascript:voteReview('405825',true);", :value => "S?", :type => "button" }
+                    .btndiv
+                      %input.btnNO{ :name => "no", :onclick => "javascript:voteReview('405825',false);", :value => "No", :type => "button" }
+                  #notReg{ :style => "margin: 5px 0pt; display: none;" }
+                    ?Te result? ?til esta opini?n?
+                    %img{ :src => "/org-img/t.gif", :width => "8" }
+                    %input{ :name => "si", :onclick => "login('405825',true);", :value => "S?", :src => "/org-img/catalog/pdp/votar_si.gif", :height => "28", :type => "image", :width => "32" }
+                    %input{ :name => "no", :onclick => "login('405825',false);", :value => "No", :src => "/org-img/catalog/pdp/votar_no.gif", :height => "28", :type => "image", :width => "32" }
+                  #error{ :style => "display: none;" }
+                    /
+                      \##MSJ_ERROR##
+                #votos405825.oputil
+                  %b
+                    = review.qty_pos
+                  = t 'catalog.reviews.resume', :count => review.qty_votes
+                #footerReview405825.tks
+              .rbbot
+                %div
+            .opdenu
+              .link_opden
+              %a{ :href => "http://www.mercadolibre.com.ar/argentina/ml/org_ayuda.main?as_new_tkt=2190&amp;as_faq_rvw_id=405825&amp;as_subject=Esta+opinion+no+cumple+con+las+politicas+del+sitio" }
+                Denunciar opinion

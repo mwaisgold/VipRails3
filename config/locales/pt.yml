@@ -1,0 +1,43 @@
+pt:
+  
+  inicio: "Início"
+  registrate: "Cadastre-se"
+  vender: "Vender"
+  mi_ml: "Meu MercadoLivre"
+  ayuda: "Contato"
+  precio: "Preço"
+  ubicacion: "Localização"
+  tucompra: "A compra deste produto está protegida."
+  vendedor: "Vendedor"
+  calificacion: "Reputação do vendedor"
+  puntos: "Pontos"
+  ventas: "Vendidos"
+  descripcion: "Descrição"
+  publicacion: "Anúncio"
+  sobre_ml: "Sobre o MercadoLivre"
+  mapa: "Mapa del sitio"
+  politicas: "Políticas"
+  centro: "Portal de Segurança"
+  programa: "Programa de Proteção ao Comprador"
+  opiniones: "Opiniões e Catálogo"
+  argentina: "Argentina"
+  brasil: "Brasil"
+  colombia: "Colômbia"
+  costarica: "Costa Rica"
+  chile: "Chile"
+  ebay: "eBay"
+  ecuador: "Ecuador"
+  mexico: "México"
+  panama: "Panamá"
+  peru: "Perú"
+  repdominicana: "Rep. Dominicana"
+  uruguay: "Uruguai"
+  venezuela: "Venezuela"
+
+  app:
+    render_time: %0.0f ms
+
+  date:
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%b %d"
