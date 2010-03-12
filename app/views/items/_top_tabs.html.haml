@@ -17,7 +17,7 @@
             http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP
 #descriptionCont
   #Descripcion.contentbox
-    = @item.description
+    != @item.description
     /
 #Fichatecnica.contentbox{ :align => "center", :style => "display: none;" }
   #catalogTab
@@ -115,20 +115,20 @@
                   = t 'catalog.reviews.pros'
                   \:
                 %br
-                = new_line_to_br review.pros
+                != new_line_to_br review.pros
               .contras
                 %b
                   = t 'catalog.reviews.contras'
                   \:
                 %br
-                = new_line_to_br review.contras
+                != new_line_to_br review.contras
             .opconcl
               %p
                 %b
                   = t 'catalog.reviews.conclusion'
                   \:
                 %br
-                = new_line_to_br review.conclusion
+                != new_line_to_br review.conclusion
             .rbroundbox
               .rbtop
                 %div

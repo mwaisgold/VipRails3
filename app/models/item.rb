@@ -7,17 +7,17 @@ class Item < ActiveRecord::Base
   belongs_to :category
   has_many :califications
   belongs_to :catalog_product
-  
+
   #Valido los campos que no pueden ser nulos
-  validates_presence_of :site_id, :item_id, :title, :price, :bids_count
+  validates_presence_of :site_id, :title, :price, :bids_count
   #Valido la numericalidad del precio
   validates_numericality_of :price
   #La cantidad de items solo puede ser un número entero
   validates_numericality_of :bids_count, :only_integer => true
   #Valido que el item_id sea unico para cuada site
-  validates_uniqueness_of :item_id, :scope => :site_id
+  # validates_uniqueness_of :item_id, :scope => :site_id
   #Valido que el site_id exista
-  validate :site_id_from_item_must_exists
+   validate :site_id_from_item_must_exists
   #, :customer_must_exist_in_ml
 
   def site_id_from_item_must_exists
@@ -26,6 +26,11 @@ class Item < ActiveRecord::Base
 
   def customer_must_exist_in_ml
     errors.add(:cust_id, "Debe existir en ML") if get_customer == nil
+  end
+
+  # Trae los demas items de un customer
+  def items_seller (customer_id, item_id)
+    Item.all(:conditions => ["customer_id = ? and id <> ?", customer_id, item_id])
   end
 
 #  def get_customer
@@ -47,14 +52,11 @@ class Item < ActiveRecord::Base
 
 end
 
-
-
 # == Schema Information
 #
 # Table name: items
 #
 #  id                 :integer(38)     not null, primary key
-#  item_id            :integer(38)
 #  title              :string(255)
 #  image              :string(255)
 #  description        :text

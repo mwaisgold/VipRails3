@@ -34,14 +34,13 @@ class ItemsController < ApplicationController
     @reviews = @product.reviews
     @catalogProductAttrs = @product.catalog_product_attributes
 
-    @items_seller = Item.all(:conditions => ["customer_id = ? and id <> ?", @customer.id, @item.id])
+    @items_seller = @item.items_seller(@customer.id, @item.id)
 
-
-     respond_to do |format|
-       format.html # show.html.erb
-       format.xml  { render :xml => @item }
-       #format.json { render :json => @item }
-     end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @item }
+      format.json { render :json => @item }
+    end
   end
 
   # GET /items/new
