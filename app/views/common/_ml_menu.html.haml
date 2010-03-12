@@ -1,0 +1,33 @@
+/
+  \##MENU## es el menu
+#contmenu.under
+  .menu_der
+    #first_lnk_menu_der
+      %a{ :href => "/" }
+        = t :inicio
+    %script
+      setLog();
+    .lnk_menu_der
+      %a{ :href => "/ayuda_home" }
+        = t :ayuda
+    .lnk_menu_der
+      %a{ :href => "/jm/myML" }
+        = t :mi_ml
+    .lnk_menu_der
+      %a{ :href => "/jm/sell" }
+        = t :vender
+    .lnk_menu_der
+      %a{ :target => "_blank", :href => "/jm/reg" }
+        = t :registrate
+  .borra
+  .flota_izq
+    %a{ :href => "/" }
+    .logo_ml
+  .menu_der
+    #bg_menu
+      #cont_buscador
+        %input#as_inner_word.buscador{ :type => "text", :onfocus => "javascript:setFocus()", :onblur => "javascript:setBlur()", :value => "", :maxlength => "60", :name => "as_word" }
+      #bot_buscar
+        %input.buscar{ :type => "submit", :value => "", :onclick => "innerSearch();" }
+/
+  \##MENU##
