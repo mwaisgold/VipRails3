@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20100305185636) do
     t.string   "title"
     t.string   "image"
     t.text     "description"
-    t.decimal  "price"
+    t.decimal  "price",              :precision => 10, :scale => 0
     t.integer  "bids_count"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -122,8 +122,8 @@ ActiveRecord::Schema.define(:version => 20100305185636) do
   end
 
   create_table "sites", :force => true do |t|
-    t.string   "site_id",    :limit => 3, :null => false
-    t.string   "locale",     :limit => 2, :null => false
+    t.string   "site_id",    :limit => 3, :default => "", :null => false
+    t.string   "locale",     :limit => 2, :default => "", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
