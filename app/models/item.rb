@@ -6,6 +6,7 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :ship_methods
   belongs_to :category
   has_many :califications
+  has_many :reviews, :through => :catalog_product
   belongs_to :catalog_product
 
   #Valido los campos que no pueden ser nulos

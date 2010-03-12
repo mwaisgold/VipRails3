@@ -26,19 +26,19 @@ function mostrarCalif(){
 }
 
 function mostrarFicha(){
-	$("#Fichatécnica").show();
+	$("#Fichatecnica").show();
 	$("#descriptionCont").hide();
 	$("#reviewsTab").hide();	
 }
 
 function mostrarDescripcion(){
-	$("#Fichatécnica").hide();
+	$("#Fichatecnica").hide();
 	$("#descriptionCont").show();
 	$("#reviewsTab").hide();	
 }
 
 function mostrarOpiniones(){
-	$("#Fichatécnica").hide();
+	$("#Fichatecnica").hide();
 	$("#descriptionCont").hide();
 	$("#reviewsTab").show();	
 }
