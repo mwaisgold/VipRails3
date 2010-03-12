@@ -1,24 +1,24 @@
 es:
   inicio: "Inicio"
-  registrate: "Regístrate"
+  registrate: "Registrate"
   vender: "Vender"
   mi_ml: "Mi MercadoLibre"
   ayuda: "Ayuda"
   precio: "Precio"
-  ubicacion: "Ubicación"
-  tucompra: "Tu compra está protegida"
+  ubicacion: "Ubicacion"
+  tucompra: "Tu compra esta protegida"
   vendedor: "Vendedor"
-  calificacion: "Calificación del vendedor"
+  calificacion: "Calificacion del vendedor"
   puntos: "Puntos"
-  ventas: "Ventas de este artículo"
-  descripcion: "Descripción"
-  publicacion: "Publicación"
+  ventas: "Ventas de este articulo"
+  descripcion: "Descripcion"
+  publicacion: "Publicacion"
   sobre_ml: "Sobre MercadoLibre"
   mapa: "Mapa del sitio"
   politicas: "Politicas"
   centro: "Centro de seguridad"
-  programa: "Programa de Protección al Comprador"
-  opiniones: "Opiniones y Cátalogo"
+  programa: "Programa de Proteccion al Comprador"
+  opiniones: "Opiniones y Catalogo"
   argentina: "Argentina"
   brasil: "Brasil"
   colombia: "Colombia"
@@ -26,31 +26,31 @@ es:
   chile: "Chile"
   ebay: "eBay"
   ecuador: "Ecuador"
-  mexico: "México"
-  panama: "Panamá"
-  peru: "Perú"
+  mexico: "Mexico"
+  panama: "Panama"
+  peru: "Peru"
   repdominicana: "Rep. Dominicana"
   uruguay: "Uruguay"
   venezuela: "Venezuela"
-  preferencia_pago: "Preferencias de pago y envío"
+  preferencia_pago: "Preferencias de pago y envio"
   texto_pago: "Pago"
-  texto_envio: "Envío"
-  texto_cuotas: "Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia"
+  texto_envio: "Envio"
+  texto_cuotas: "Hasta 12 cuotas sin interes con tarjetas del Hipotecario, Standard y Patagonia"
   hasta: hasta ${{valor}}
 
   catalog:
     product:
-      tab: "Ficha técnica"
+      tab: "Ficha tecnica"
       title: "Especificaciones"
-      print: "Imprimir ficha t?cnica"
+      print: "Imprimir ficha tecnica"
     reviews:
       tab:
-        one: "1 opinión"
+        one: "1 opinion"
         other: '{{count}} opiniones'
       title: "Opiniones"
       promedio: "Promedio"
       resumen:
-        one: "de <b>1 opinión</b>"
+        one: "de <b>1 opinion</b>"
         other: 'de <b>{{count}} opiniones</b>'
       distribucion: "Distribuci?n del puntaje"
       puntaje: "Puntaje"
@@ -58,12 +58,12 @@ es:
       autor: "Autor"
       pros: "Pros"
       contras: "Contras"
-      conclusion: "Conclusión"
-      util: "?Te resultó útil esta opini?n?"
+      conclusion: "Conclusion"
+      util: "?Te resulto util esta opini?n?"
       resume:
-        one: "de 1 usuario <b>votó como útil esta opinión</b>"
-        other: "de {{count}} usuarios <b>votaron como útil esta opinión</b>"
-      denuncia: "Denunciar opinión"
+        one: "de 1 usuario <b>voto como util esta opinion</b>"
+        other: "de {{count}} usuarios <b>votaron como util esta opinion</b>"
+      denuncia: "Denunciar opinion"
   
   questions:
     questions_to_seller: "Preguntas al vendedor"
@@ -74,7 +74,7 @@ es:
     ask_a_seller: "Hacer una pregunta al vendedor"
 
   califications:
-    calif: "Calificaciones recibidas por la venta de este artículo."
+    calif: "Calificaciones recibidas por la venta de este articulo."
     view_all: "Ver todas las calificaciones"
 
   app:
@@ -89,7 +89,7 @@ es:
   date:
     abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
-    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     month_names: [~, Enero,Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
     pm: "pm"
     formats:
@@ -97,12 +97,12 @@ es:
       short: "%d/%m/%Y %H:%M"
 
   items_seller:
-    more_items: "Más publicaciones del vendedor"
-    view_more: "Ver más"
+    more_items: "Mas publicaciones del vendedor"
+    view_more: "Ver mas"
 
   education:
     learn: "Aprende sobre MercadoLibre"
-    how_to_buy: "Cómo Comprar"
-    advices: "Consejos para una transacción exitosa"
-    why_ml: "Por qué MercadoLibre es seguro"
-    how_pay: "Cómo pago mi compra"
+    how_to_buy: "Como Comprar"
+    advices: "Consejos para una transaccion exitosa"
+    why_ml: "Por que MercadoLibre es seguro"
+    how_pay: "Como pago mi compra"
