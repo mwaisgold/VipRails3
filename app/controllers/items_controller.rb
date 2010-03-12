@@ -39,8 +39,11 @@ class ItemsController < ApplicationController
 
      respond_to do |format|
        format.html # show.html.erb
-       format.xml  { render :xml => @item }
-       #format.json { render :json => @item }
+       format.xml  { 
+	     text = @item.to_xml :include => [:customer, :questions, :category, :califications, :catalog_product, :reviews] 
+		 render :xml => text
+	   }
+       format.json { render :json => @item.to_json(:include => [:customer, :questions, :category, :califications, :catalog_product, :reviews] )}
      end
   end
 
