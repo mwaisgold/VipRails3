@@ -4,7 +4,7 @@ es:
   vender: "Vender"
   mi_ml: "Mi MercadoLibre"
   ayuda: "Ayuda"
-  precio: "Precioñ"
+  precio: "Precio"
   ubicacion: "Ubicación"
   tucompra: "Tu compra está protegida"
   vendedor: "Vendedor"
@@ -91,6 +91,10 @@ es:
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     month_names: [~, Enero,Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    pm: "pm"
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%d/%m/%Y %H:%M"
 
   items_seller:
     more_items: "Más publicaciones del vendedor"
