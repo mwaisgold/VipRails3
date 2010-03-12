@@ -1,0 +1,112 @@
+.BigContainer
+  #pathcateg
+    .backlist
+      %span#listButton{ :style => "position: relative; width: 250px; height: 20px;" }
+    .breadcrumb
+      - for category in @categories
+      - if !category.category.nil?
+      %img{ :src => "/org-img/prod/arrow_categ.gif", :border => "0", :height => "10", :width => "13" }
+      - end
+      %a.path1{ :href => "/jm/search?as_categ_id=#{category.id}" }
+        = category.name
+      - end
+/
+  PREHEADER
+%div
+/
+  TITULO DEL ITEM
+#boxgral
+  %table{ :width => "100%", :border => "0", :cellpadding => "0", :cellspacing => "0" }
+    %tr
+      %td{ :width => "41%", :rowspan => "2", :align => "center", :valign => "top" }
+        .marcofoto
+          %table.photoframe{ :align => "center" }
+            %tr
+              %td#tdMainImg{ :align => "center", :width => "280", :height => "280" }
+                #divMainImg{ :style => "display:inline" }
+                  %a#linkMainImg{ :href => "javascript:showVisor()" }
+                    %img#mainImg{ :src => "http://www.mercadolibre.com.ar/jm/img?s=MLA&f=#{h @item.image}&v=E", :border => "none", :align => "top", :alt => h @item.title, :title => h @item.title }
+      %td{ :width => "59%", :valign => "top", :style => "padding:0 5px 0 10px;" }
+        %h1
+          = h @item.title
+        %table{ :width => "100%", :border => "0", :cellpadding => "0", :cellspacing => "0" }
+          %tr
+            %td{ :width => "16%", :height => "25" }
+              = t :precio
+              \:
+            %td{ :width => "84%", :valign => "middle" }
+              %span.price
+                $
+                = @item.price
+                %span.decimales
+                  99
+          %tr
+          %tr
+            %td{ :height => "25" }
+              = t :ubicacion
+              \:
+            %td
+              Capital Federal (Zona Alto Palermo)
+          %tr
+            %td{ :height => "25", :valign => "top" }
+              #endtxt1
+            %td{ :height => "25", :valign => "top" }
+              #endtxt2
+                %span#endtxt3.font11Grey
+              %div{ :style => "margin-top: 8px;" }
+              .purchase
+                %input#BidButtonTop.but_pri_1{ :type => "button", :value => "Comprar", :title => "Comprar" }
+              %span.font11
+                = t :tucompra
+                \.
+        .dashed
+        .box
+          %table{ :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%" }
+            %tbody
+              %tr
+                %td{ :style => "padding-top: 2px;", :valign => "top", :width => "16%" }
+                  = t :vendedor
+                  \:
+                %td.datavend{ :valign => "top", :width => "84%" }
+                  %div
+                    %span#Nickname
+                      %span#MyNickname{ :style => "margin-top: 5px; display: inline; float: left; padding-bottom: 2px;" }
+                        = @customer.nickname
+                      %span{ :title => "" }
+                    %div{ :style => "clear: both;" }
+                  %span.font11{ :style => "clear: both;" }
+                  #CalifPercentage{ :style => "width: auto; clear: both;" }
+                    #puntos
+                      = t :calificacion
+                      \:
+                      = @customer.points
+                      = t :puntos
+                    #posneg
+                      #caja_pos
+                        %span#link_pos
+                          - if Integer(@customer.qty_calif) > 0 then
+                          (
+                          = Integer(@customer.points) * 100 / Integer(@customer.qty_calif)
+                          \%
+                          - end
+                        %span#img_pos.pos
+                        )
+                      #caja_neg
+                        %span#link_neg
+                          - if Integer(@customer.qty_calif) > 0 then
+                          (
+                          = 100 - Integer(@customer.points) * 100 / Integer(@customer.qty_calif)
+                          \%
+                        - end
+                        %span#img_neg.neg
+                        )
+                  %br
+                  %div{ :style => "clear: both;" }
+                    = t :ventas
+                    \:
+                    = @item.bids_count
+                    %a{ :href => "" }
+                  %br
+.font11.denunhd
+  = t :publicacion
+  \#123456789

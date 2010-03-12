@@ -1,0 +1,85 @@
+#tabsN
+  %ul#Community
+    %li#current.TabbedPanelsTab{ :group => "Community" }
+      %a{ :href => "javascript:mostrarPreguntas();cambiarEstilos('HPreguntasalvendedor',1,'Community')" }
+        %span
+          = t 'questions.questions_to_seller'
+    %li#HCalificacionesdecompradores.TabbedPanelsTab{ :group => "Community" }
+      %a{ :href => "javascript:mostrarCalif()" }
+        %span
+          = t 'questions.buyer_califications'
+#CommunityCont
+  #Preguntasalvendedor.contentbox
+    %a{ :name => "toQuest" }
+    %div{ :style => "text-align:right; width:99%" }
+    - for question in @questions
+    #bigQues
+      %a{ :name => "toQuest" }
+      #tableQues1.wrap1
+        %a{ :name => "toQuest" }
+        .wrap2
+          %a{ :name => "toQuest" }
+          .side
+            %b
+              = t 'questions.question'
+            %br
+          .bloque
+            = question.question
+          .denuncia2
+            %a.font10{ :href => "javascript:showDenunForm(864191029,'QUES','Y')" }
+              = t 'questions.denounce'
+        .wrap3
+          .side
+            %b
+              = t 'questions.answer'
+            %br
+            %span.font10
+              = l question.question_dt, :format => :short
+          .bloque
+            = question.answer
+          .denuncia2
+            %a.font10{ :href => "javascript:showDenunForm(864191029,'ANSW','Y')" }
+              = t 'questions.denounce'
+    - end
+    .askq-button
+      %table{ :width => "250", :border => "0", :align => "center" }
+        %tr
+          %td{ :align => "center" }
+            %div{ :style => "width:auto;overflow:hidden;" }
+              %input.but_sec_2{ :type => "button", :value => t 'questions.ask_a_seller', :title => t 'questions.ask_a_seller', :onclick => "javascript:makeQues()" }
+  #Calificacionesdecompradores.contentbox{ :style => "display:none" }
+    #historyBuyer
+      %center
+        %center
+          .titcals.titles2
+            = t 'califications.calif'
+          %div{ :style => "text-align: right;" }
+          .wrap1
+            - for calification in @califications do
+            .side-icon
+              - if calification.value_calif == 1 then
+              %img{ :src => "/org-img/calif/pos_fb2.gif", :align => "absmiddle", :height => "16", :width => "16" }
+              - end
+              - if calification.value_calif == 0 then
+              %img{ :src => "/org-img/calif/neu_fb2.gif", :align => "absmiddle", :height => "16", :width => "16" }
+              - end
+              - if calification.value_calif == -1 then
+              %img{ :src => "/org-img/calif/neg_fb2.gif", :align => "absmiddle", :height => "16", :width => "16" }
+              - end
+            .bloque-cal
+              .tit_cal
+                .nickcal
+                  %b
+                    = calification.customer.nickname
+                    (
+                    = calification.customer.points
+                    )
+                .date-cal
+                  = l calification.fecha, :format => :short
+              = calification.texto_calif
+            .separator2
+            - end
+            %br
+            .gotop{ :style => "margin-right: 10px;" }
+              %a{ :href => "http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080" }
+                = t 'califications.view_all'

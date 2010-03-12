@@ -1,0 +1,37 @@
+- content_for :title do
+= @item.title
+- end
+%style
+  div.float {
+  float: left; padding: 2px;
+  }
+  \.imageOver{
+  background:url(/org-img/vip3/visor/zoomB.gif) no-repeat 50% 50%;
+  filter:alpha(opacity=80);
+  \-moz-opacity: 0.8;
+  \-khtml-opacity: 0.8;
+  opacity: 0.8;
+  }
+/
+  ****************************************************************************************************************
+  VISOR HTML
+  ****************************************************************************************************************
+= javascript_include_tag 'vip'
+= javascript_include_tag 'jquery.min'
+= render :partial => 'item_header'
+= render :partial => 'top_tabs'
+%br
+%br
+= render :partial => 'ship_payment_methods'
+%br
+%br
+/
+  PREGUNTAS
+= render :partial => 'questions'
+%br
+/
+  BOX EDUCATION
+= render :partial => 'education'
+/
+  ART Vendedor
+= render :partial => 'items_seller'
