@@ -1,0 +1,14 @@
+!!! Strict
+%html
+  = render :partial => "common/header"
+  %body
+    %center
+      #containall
+        = render :partial => "common/ml_menu"
+        = yield
+        = render :partial => "common/footer"
+        %br
+        %br
+    %center
+      gen:
+      = t('app.render_time') % ((Time.now - @stamp)*1000)

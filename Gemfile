@@ -10,6 +10,7 @@ gem "rails", "3.0.0.beta"
 # ActiveRecord requires a database adapter. By default,
 # Rails has selected sqlite3.
 gem "mysql"
+gem "haml"
 
 ## Bundle the gems you use:
 # gem "bj"
