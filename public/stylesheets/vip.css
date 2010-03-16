@@ -3,7 +3,7 @@ div.float {
   padding: 2px; }
 
 .imageOver {
-  background: url(/org-img/vip3/visor/zoomB.gif) no-repeat 50% 50%;
+  background: url(http://img.mlstatic.com/org-img/vip3/visor/zoomB.gif) no-repeat 50% 50%;
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
   -khtml-opacity: 0.8;
