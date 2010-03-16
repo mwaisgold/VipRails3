@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @customer = @item.customer
-    @questions = @item.questions
+    @questions = @item.questions.all(:limit => 30)
     @shipMethods = @item.ship_methods
     @paymentMethods = @item.payment_methods
 
