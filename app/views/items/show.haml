@@ -1,0 +1,24 @@
+- content_for :title do
+  = @item.title
+
+= javascript_include_tag 'vip'
+= javascript_include_tag 'jquery.min'
+= stylesheet_link_tag 'vip'
+
+= render :partial => 'item_header'
+= render :partial => 'top_tabs'
+%br
+%br
+= render :partial => 'ship_payment_methods'
+%br
+%br
+/
+  PREGUNTAS
+= render :partial => 'questions'
+%br
+/
+  BOX EDUCATION
+= render :partial => 'education'
+/
+  ART Vendedor
+= render :partial => 'items_seller'

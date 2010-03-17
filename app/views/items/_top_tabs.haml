@@ -17,7 +17,7 @@
             http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP
 #descriptionCont
   #Descripcion.contentbox
-    = @item.description
+    != @item.description
     /
 #Fichatecnica.contentbox{ :align => "center", :style => "display: none;" }
   #catalogTab
@@ -50,7 +50,7 @@
         %h3
           = t 'catalog.reviews.promedio'
         %span.promedio
-          %img{ :src => "/org-img/reviews/#{@product.get_balls_image_link}BALLSON.gif", :align => "absbottom" }
+          %img{ :src => "http://img.mlstatic.com/org-img/reviews/#{@product.get_balls_image_link}BALLSON.gif", :align => "absbottom" }
           %br
           = t 'catalog.reviews.resumen', :count => @reviews.length
       #distribucion
@@ -62,27 +62,27 @@
           .lblquant
             = t 'catalog.reviews.opiniones'
         .colstar
-          %img{ :src => "/org-img/reviews/5BALLSON.gif", :align => "absbottom" }
+          %img{ :src => "http://img.mlstatic.com/org-img/reviews/5BALLSON.gif", :align => "absbottom" }
           %br
           .quant
             = @product.qty5
         .colstar
-          %img{ :src => "/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
+          %img{ :src => "http://img.mlstatic.com/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
           %br
           .quant
             = @product.qty4
         .colstar
-          %img{ :src => "/org-img/reviews/3BALLSON.gif", :align => "absbottom" }
+          %img{ :src => "http://img.mlstatic.com/org-img/reviews/3BALLSON.gif", :align => "absbottom" }
           %br
           .quant
             = @product.qty3
         .colstar
-          %img{ :src => "/org-img/reviews/2BALLSON.gif", :align => "absbottom" }
+          %img{ :src => "http://img.mlstatic.com/org-img/reviews/2BALLSON.gif", :align => "absbottom" }
           %br
           .quant
             = @product.qty2
         .colstar
-          %img{ :src => "/org-img/reviews/1BALLSON.gif", :align => "absbottom" }
+          %img{ :src => "http://img.mlstatic.com/org-img/reviews/1BALLSON.gif", :align => "absbottom" }
           %br
           .quant
             = @product.qty1
@@ -95,7 +95,7 @@
         .contopinion
           .titcalif
             .opcalif
-              %img{ :src => "/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
+              %img{ :src => "http://img.mlstatic.com/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
               |
             .optitle{ :style => "" }
               = review.title
@@ -115,20 +115,20 @@
                   = t 'catalog.reviews.pros'
                   \:
                 %br
-                ~ review.pros
+                != new_line_to_br review.pros
               .contras
                 %b
                   = t 'catalog.reviews.contras'
                   \:
                 %br
-                = new_line_to_br review.contras
+                != new_line_to_br review.contras
             .opconcl
               %p
                 %b
                   = t 'catalog.reviews.conclusion'
                   \:
                 %br
-                = new_line_to_br review.conclusion
+                != new_line_to_br review.conclusion
             .rbroundbox
               .rbtop
                 %div
@@ -143,9 +143,9 @@
                       %input.btnNO{ :name => "no", :onclick => "javascript:voteReview('405825',false);", :value => "No", :type => "button" }
                   #notReg{ :style => "margin: 5px 0pt; display: none;" }
                     ?Te result? ?til esta opini?n?
-                    %img{ :src => "/org-img/t.gif", :width => "8" }
-                    %input{ :name => "si", :onclick => "login('405825',true);", :value => "S?", :src => "/org-img/catalog/pdp/votar_si.gif", :height => "28", :type => "image", :width => "32" }
-                    %input{ :name => "no", :onclick => "login('405825',false);", :value => "No", :src => "/org-img/catalog/pdp/votar_no.gif", :height => "28", :type => "image", :width => "32" }
+                    %img{ :src => "http://img.mlstatic.com/org-img/t.gif", :width => "8" }
+                    %input{ :name => "si", :onclick => "login('405825',true);", :value => "S?", :src => "http://img.mlstatic.com/org-img/catalog/pdp/votar_si.gif", :height => "28", :type => "image", :width => "32" }
+                    %input{ :name => "no", :onclick => "login('405825',false);", :value => "No", :src => "http://img.mlstatic.com/org-img/catalog/pdp/votar_no.gif", :height => "28", :type => "image", :width => "32" }
                   #error{ :style => "display: none;" }
                     /
                       \##MSJ_ERROR##

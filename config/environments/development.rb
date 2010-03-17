@@ -16,9 +16,9 @@ VipRails3::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-  
-   config.action_controller.asset_host = "ec2-184-73-6-124.compute-1.amazonaws.com"
-   ActionController::Base.asset_host = "ec2-184-73-6-124.compute-1.amazonaws.com"
-  
+
+  # OJO!!! cambiar segun entorno
+#  config.action_controller.asset_host = "ec2-75-101-186-222.compute-1.amazonaws.com"
+#  ActionController::Base.asset_host = "ec2-75-101-186-222.compute-1.amazonaws.com"
 end
 

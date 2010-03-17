@@ -5,7 +5,7 @@
     .breadcrumb
       - for category in @categories
         - if !category.category.nil?
-          %img{ :src => "/org-img/prod/arrow_categ.gif", :border => "0", :height => "10", :width => "13" }
+          %img{ :src => "/images/arrow_categ.gif", :border => "0", :height => "10", :width => "13" }
       
         %a.path1{ :href => "/jm/search?as_categ_id=#{category.id}" }
           = category.name
