@@ -18,7 +18,7 @@ class Item < ActiveRecord::Base
   #Valido que el item_id sea unico para cuada site
   # validates_uniqueness_of :item_id, :scope => :site_id
   #Valido que el site_id exista
-   validate :site_id_from_item_must_exists
+  validate :site_id_from_item_must_exists
   #, :customer_must_exist_in_ml
 
   def site_id_from_item_must_exists
