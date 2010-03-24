@@ -20,18 +20,20 @@ Site.delete_all
 
 
 @site = Site.create site_id: "MLA", locale: "es"
+@shipMethod = ShipMethod.create description: "A convenir"
+@paymentMethod = PaymentMethod.create name: "visa", logo: "sarasa"
+@product = CatalogProduct.create name: "Iphone mejor del mundo"
+@attr = CatalogProductAttribute.create key: "Wifi", value: "(802.11b/g)"
+@product.catalog_product_attributes << @attr
+@product.save
+
 1.times do |i|
   @customer = Customer.create nickname: "customer#{i}", points: 95, qty_calif: 100
   @customer2 = Customer.create nickname: "other#{i}", points: 45, qty_calif: 50
 
   @item = Item.create title: "iPod touch 32gb 3ra generacion, caja sellada", price: 100, description: "description", image: "61826546_3253.jpg", bids_count: 35, site: @site, customer: @customer
-  @shipMethod = ShipMethod.create description: "A convenir"
-  @paymentMethod = PaymentMethod.create name: "visa", logo: "sarasa"
-  @product = CatalogProduct.create name: "Iphone mejor del mundo"
-  @attr = CatalogProductAttribute.create key: "Wifi", value: "(802.11b/g)"
-  @product.catalog_product_attributes << @attr
+
   @review = Review.create title: "Titulo de review", pros: "prossss", contras: "contrass", customer: @customer, catalog_product: @product, qty_votes: 10, qty_pos: 5, points: 4, conclusion: "conclusion"
-  @product.save
 
   30.times do |j|
     @question = Question.create item: @item, question: "preguntita#{j}", question_dt: Time.now, answer: "respuestita#{j}", answer_dt: Time.now
