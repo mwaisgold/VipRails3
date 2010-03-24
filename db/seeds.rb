@@ -20,11 +20,11 @@ Site.delete_all
 
 
 @site = Site.create site_id: "MLA", locale: "es"
-10.times do |i|
+1.times do |i|
   @customer = Customer.create nickname: "customer#{i}", points: 95, qty_calif: 100
   @customer2 = Customer.create nickname: "other#{i}", points: 45, qty_calif: 50
 
-  @item = Item.create title: "iPod touch 32gb 3ra generacion, caja sellada", price: 100, description: "description", image: "image.jpg", bids_count: 35, site: @site, customer: @customer
+  @item = Item.create title: "iPod touch 32gb 3ra generacion, caja sellada", price: 100, description: "description", image: "61826546_3253.jpg", bids_count: 35, site: @site, customer: @customer
   @shipMethod = ShipMethod.create description: "A convenir"
   @paymentMethod = PaymentMethod.create name: "visa", logo: "sarasa"
   @product = CatalogProduct.create name: "Iphone mejor del mundo"
@@ -45,6 +45,6 @@ Site.delete_all
   @item.save
 
   5.times do
-    Item.create title: "Mac Book Pro 13", price: 10000, description: "description", image: "image.jpg", bids_count: 35, site: @site, customer: @customer
+    Item.create title: "Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009", price: 10000, description: "description", image: "image.jpg", bids_count: 35, site: @site, customer: @customer
   end
 end
