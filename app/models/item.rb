@@ -31,7 +31,7 @@ class Item < ActiveRecord::Base
 
   # Trae los demas items de un customer
   def items_seller (customer_id, item_id)
-    Item.all(:conditions => ["customer_id = ? and id <> ?", customer_id, item_id])
+    Item.all(:conditions => ["customer_id = ? and id <> ?", customer_id, item_id], :limit => 5)
   end
 
 #  def get_customer
