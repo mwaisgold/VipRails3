@@ -1,5 +1,5 @@
 --- 
-hash: 924f2cafedf9b9046df1da933fa2f5d882c71124
+hash: f4bfb92e50e7b8b86518cf38a54b4e9f0d4ad59b
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
@@ -22,42 +22,42 @@ specs:
     version: 3.0.0.beta
 - actionmailer: 
     version: 3.0.0.beta
-- arel: 
-    version: 0.2.1
-- rack-mount: 
-    version: 0.4.7
-- erubis: 
-    version: 2.6.5
-- i18n: 
-    version: 0.3.5
 - bundler: 
     version: 0.9.11
+- thor: 
+    version: 0.13.4
+- memcache-client: 
+    version: 1.7.8
+- i18n: 
+    version: 0.3.5
+- arel: 
+    version: 0.2.1
+- rack: 
+    version: 1.1.0
+- tzinfo: 
+    version: 0.3.17
+- erubis: 
+    version: 2.6.5
 - builder: 
     version: 2.1.2
 - mail: 
     version: 2.1.3
-- rack: 
-    version: 1.1.0
-- abstract: 
-    version: 1.0.0
-- text-format: 
-    version: 1.0.0
-- memcache-client: 
-    version: 1.7.8
-- rack-test: 
-    version: 0.5.3
-- tzinfo: 
-    version: 0.3.17
-- text-hyphen: 
-    version: 1.0.0
-- thor: 
-    version: 0.13.4
-- mime-types: 
-    version: "1.16"
 - mysql: 
     version: 2.8.1
+- rack-test: 
+    version: 0.5.3
+- mime-types: 
+    version: "1.16"
 - haml: 
-    version: 2.2.21
+    version: 2.2.20
+- text-format: 
+    version: 1.0.0
+- abstract: 
+    version: 1.0.0
+- text-hyphen: 
+    version: 1.0.0
+- rack-mount: 
+    version: 0.4.7
 dependencies: 
   rails: 
     version: = 3.0.0.beta

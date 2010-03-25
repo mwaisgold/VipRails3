@@ -1,80 +1,36 @@
-#tabsN
-  %ul#Community
-    %li#current.TabbedPanelsTab{ :group => "Community" }
-      %a{ :href => "javascript:mostrarPreguntas();cambiarEstilos('HPreguntasalvendedor',1,'Community')" }
-        %span
-          = t 'questions.questions_to_seller'
-    %li#HCalificacionesdecompradores.TabbedPanelsTab{ :group => "Community" }
-      %a{ :href => "javascript:mostrarCalif()" }
-        %span
-          = t 'questions.buyer_califications'
-#CommunityCont
-  #Preguntasalvendedor.contentbox
-    %a{ :name => "toQuest" }
-    %div{ :style => "text-align:right; width:99%" }
-    - for question in @questions
-      #bigQues
-        %a{ :name => "toQuest" }
-        #tableQues1.wrap1
-          %a{ :name => "toQuest" }
-          .wrap2
-            %a{ :name => "toQuest" }
-            .side
+.tabs.conteConsultas
+  %form{ :action => "" }
+    %label.selected
+      %input#preguntas{ :name => "tabsNavVendedor", :type => "radio", :checked => "checked" }
+      %span
+        =t 'questions.questions_to_seller'
+    %input{ :type => "submit", :value => "ver" }
+  %ul.listaConsultas
+    - for question in @questions  
+      %li
+        %dl.contPreguntas
+          %dt
+            %span.titulo
               %b
-                = t 'questions.question'
-              %br
-            .bloque
+                =t 'questions.question'
+          %dd.txt
+            %span
               = question.question
-            .denuncia2
-              %a.font10{ :href => "javascript:showDenunForm(864191029,'QUES','Y')" }
+            %small.link
+              %a{ :href => "#" }
                 = t 'questions.denounce'
-          .wrap3
-            .side
+        %dl.contRespuestas
+          %dt
+            %span.titulo
               %b
-                = t 'questions.answer'
-              %br
-              %span.font10
-                = l question.question_dt, :format => :short
-            .bloque
+                =t 'questions.answer'
+            %small.fecha
+              = l question.question_dt, :format => :short
+          %dd.txt
+            %span
               = question.answer
-            .denuncia2
-              %a.font10{ :href => "javascript:showDenunForm(864191029,'ANSW','Y')" }
+            %small.link
+              %a{ :href => "#" }
                 = t 'questions.denounce'
-    .askq-button
-      %table{ :width => "250", :border => "0", :align => "center" }
-        %tr
-          %td{ :align => "center" }
-            %div{ :style => "width:auto;overflow:hidden;" }
-              %input.but_sec_2{ :type => "button", :value => t('questions.ask_a_seller') , :title => t('questions.ask_a_seller'), :onclick => "javascript:makeQues()" }
-  #Calificacionesdecompradores.contentbox{ :style => "display:none" }
-    #historyBuyer
-      %center
-        %center
-          .titcals.titles2
-            = t 'califications.calif'
-          %div{ :style => "text-align: right;" }
-          .wrap1
-            - for calification in @califications do
-              .side-icon
-                - if calification.value_calif == 1 then
-                  %img{ :src => "http://img.mlstatic.com/org-img/calif/pos_fb2.gif", :align => "absmiddle", :height => "16", :width => "16" }
-                - if calification.value_calif == 0 then
-                  %img{ :src => "http://img.mlstatic.com/org-img/calif/neu_fb2.gif", :align => "absmiddle", :height => "16", :width => "16" }
-                - if calification.value_calif == -1 then
-                  %img{ :src => "http://img.mlstatic.com/org-img/calif/neg_fb2.gif", :align => "absmiddle", :height => "16", :width => "16" }
-              .bloque-cal
-                .tit_cal
-                  .nickcal
-                    %b
-                      = calification.customer.nickname
-                      (
-                      = calification.customer.points
-                      )
-                  .date-cal
-                    = l calification.fecha, :format => :short
-                = calification.texto_calif
-              .separator2
-            %br
-            .gotop{ :style => "margin-right: 10px;" }
-              %a{ :href => "http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080" }
-                = t 'califications.view_all'
+  %form.clear.contactarConsultas{ :action => "", :method => "get" }
+    %input.ofertar{ :type => "submit", :value => "Contactar al vendedor" }

@@ -1,33 +1,16 @@
-/
-  \##MENU## es el menu
-#contmenu.under
-  .menu_der
-    #first_lnk_menu_der
-      %a{ :href => "/" }
-        = t :inicio
-    %script
-      setLog();
-    .lnk_menu_der
-      %a{ :href => "/ayuda_home" }
-        = t :ayuda
-    .lnk_menu_der
-      %a{ :href => "/jm/myML" }
-        = t :mi_ml
-    .lnk_menu_der
-      %a{ :href => "/jm/sell" }
-        = t :vender
-    .lnk_menu_der
-      %a{ :target => "_blank", :href => "/jm/reg" }
-        = t :registrate
-  .borra
-  .flota_izq
-    %a{ :href => "/" }
-    .logo_ml
-  .menu_der
-    #bg_menu
-      #cont_buscador
-        %input#as_inner_word.buscador{ :type => "text", :onfocus => "javascript:setFocus()", :onblur => "javascript:setBlur()", :value => "", :maxlength => "60", :name => "as_word" }
-      #bot_buscar
-        %input.buscar{ :type => "submit", :value => "", :onclick => "innerSearch();" }
-/
-  \##MENU##
+#header
+  %h1
+    %a{ :href => "http://www.mercadolibre.com.ar" }
+      MercadoLibre. Donde compras y vendes de todo.
+  %p.sub
+    %a#inicio{ :href => "" }
+      =t :inicio
+    %a#ayuda{ :href => "" }
+      =t :ayuda
+  .search
+    %form#formBuscar{ :method => "get", :action => "http://www.mercadolibre.com.ar/jm/search" }
+      %label{ :accesskey => "tb", :for => "as_word" }
+        %span
+          Ingresa tu busqueda
+        %input#as_inner_word.i-buscar{ :type => "text", :tabindex => "1", :value => "", :maxlength => "60", :name => "as_word", :autocomplete => "off" }
+      %input.b-buscar{ :type => "submit", :tabindex => "2", :accesskey => "b", :value => "Buscar" }
