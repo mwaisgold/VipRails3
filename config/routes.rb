@@ -40,6 +40,10 @@ VipRails3::Application.routes.draw do |map|
     map.resources :items
     map.resources :sites
 
+    15.times do |i|
+      map.resources :"resource#{i}"
+    end
+
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
