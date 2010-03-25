@@ -1,47 +1,63 @@
-#boxgral
-  %span.tith2
+#prefPago.boxGral
+  %h3
     = t :preferencia_pago
-  %div{ :style => "margin-left: 10px;" }
-    .titles2
+  #pago
+    %h4
       = t :texto_pago
-    %span#paymentMethodDesc
+    %ul
       - for paymentMethod in @paymentMethods
-        %div{ :style => "margin-left: 10px;" }
+        %li
           \-
           = paymentMethod.name
-          /%img{ :src => paymentMethod.logo }
-    %div
-      %br
-      %table{ :cellpadding => "0", :cellspacing => "0", :width => "100%" }
-        %tbody
-          %tr
-            %td
-              #boxmpmedios
-                #mpOpen2
-                  #mptoptitle
-                    %a{ :href => "/jm/ml.faqs.portalFaqs.FaqsController?axn=verFaq&amp;faqId=3797&amp;categId=MP", :target => "_blank" }
-                      %img{ :src => "http://img.mlstatic.com/org-img/vip3/mpagotitle.gif", :border => "0" }
-                .mediosBox
-                  %img{ :src => "http://img.mlstatic.com/org-img/vip3/mcard/mcards_mla.gif" }
-                  %img{ :src => "http://img.mlstatic.com/org-img/vip3/mcard/med_ar_296x23.gif" }
-                  %div{ :style => "margin: 5px 0pt; color: rgb(18, 121, 40); font-size: 11px;" }
-                    = t :texto_cuotas
-                    \.
-                  %div{ :style => "margin-top: 8px;" }
-                    %img{ :src => "http://www.mercadolibre.com/org-img/vip3/ep/ppc17x17.gif", :align => "absmiddle", :height => "17", :width => "17" }
-                    %a{ :target => "_blank", :href => "http://www.mercadopago.com/argentina/ml/p_loadhtml?as_menu=M06S03&amp;as_html_code=PROTECCION_COMP02" }
-                      = t :tucompra
-                    = t :hasta, :valor => 6000
-                    %span.decimales
-                      00
-    %br
-    .dashedgreyline
-    .titles2
-      = t :texto_envio
-    %span#shipMethodDesc
+    %fieldset
+      %legend
+        MercadoPago
+        %a{ :href => "" }
+          Que es?
+      %img{ :src => "/assets/mcards_mla.gif", :alt => "tarjetas argentina" }
+      %img{ :src => "/assets/med_ar_296x23.gif", :alt => "medios de pago argentina" }
+      %span
+        Hasta 12 cuotas sin interes con tarjetas del Hipotecario, Standard y Patagonia.
+  %div
+    %h4
+      Envio
+    %ul
       - for shipMethod in @shipMethods
-        %div{ :style => "margin-left: 10px;" }
-          \-
+        %li
+          \- 
           = shipMethod.description
-    %br
-    %div
+    %table.deli1{ :width => "648", :cellspacing => "0", :cellpadding => "0", :align => "center", :style => "", :height => "40px" }
+      %tbody
+        %tr
+          %td{ :width => "50%", :height => "20" }
+            %table.deli2{ :width => "100%", :border => "0", :cellpadding => "0", :cellspacing => "0" }
+              %tbody
+                %tr
+                  %td
+                    Gran Bs. As. x kilometro
+                  %td{ :align => "right" }
+                    $ 1.90
+          %td{ :width => "50%", :height => "20" }
+            %table.deli2{ :width => "100%", :border => "0", :cellpadding => "0", :cellspacing => "0" }
+              %tbody
+                %tr
+                  %td
+                    MICRO TERMINAL RETIRO MOTO
+                  %td{ :align => "right" }
+                    $ 12.00
+        %tr
+          %td{ :width => "50%", :height => "20" }
+            %table.deli2{ :width => "100%", :border => "0", :cellpadding => "0", :cellspacing => "0" }
+              %tbody
+                %tr
+                  %td
+                    Capital maximo
+                  %td{ :align => "right" }
+                    $ 30.00
+          %td{ :width => "50%", :height => "20" }
+            %table.deli2{ :width => "100%", :border => "0", :cellpadding => "0", :cellspacing => "0" }
+              %tbody
+                %tr
+                  %td
+                  %td{ :align => "right" }
+                    \&nbsp;

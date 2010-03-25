@@ -4,75 +4,9 @@
     = h(yield(:title) || "Untitled")
   /
     %base{ :href => "http://www.mercadolibre.com.ar/argentina/ml/" }
-  %link{ :rel => "stylesheet", :href => "http://www.mercadolibre.com.ar/jm/ml.api.webcomponent.CascadingStyleSheetsController?name=VIP3&visualId=STD&templateID=C_CI_TEMPLATE", :type => "text/css" }
-  %script{ :src => "http://www.mercadolibre.com.ar/jm/ml.api.webcomponent.JavaScriptController?name=VIP3&visualId=STD&v=20081007.js" }
-  %style
-    \.ver_plan {
-    font-size:11px;
-    
-    }
-    
-    \.tarjeta-diners , .tarjeta-master , .tarjeta-amex , .tarjeta-tnaranja , .tarjeta-magna , .tarjeta-hipercard , .tarjeta-aura , .tarjeta-visa , .tarjeta-acard, .tarjeta-presto, .tarjeta-bradesco {
-    background-image:url('http://www.mercadolibre.com/org-img/vip3/tarjetas.gif');
-    background-repeat:no-repeat;
-    display : inline ;
-    float : left;
-    width :26px;
-    height:16px;
-    list-style : none;
-    margin-left : 3px;
-    
-    }
-    
-    \.tarjeta-diners {	background-position: 0 -30px;}
-    \.tarjeta-master {	background-position: 0 -76px;}
-    \.tarjeta-amex   { background-position: 0 -122px; }
-    \.tarjeta-tnaranja { background-position: 0 -168px; }
-    \.tarjeta-magna { background-position: 0 -214px; }
-    \.tarjeta-hipercard { background-position: 0 -260px; }
-    \.tarjeta-aura { background-position: 0 -306px; }
-    \.tarjeta-visa { background-position: 0 -352px; }
-    \.tarjeta-acard { background-position: 0 -398px; }
-    \.tarjeta-presto { background-position: 0 -444px; }
-    \.tarjeta-bradesco { background-position: 0 -490px; }
-  %script
-    var valItemId = "123456789";
-    var valItemSite = "MLA";
-    var visualId = "STD";
-    var urlBaseSite = "http://www.mercadolibre.com.ar/";
-    var urlDefault = "http://www.mercadolibre.com.ar/argentina/ml/";
-    var urlBase = "http://"+window.location.host;
-    var oldUrl = "http://www.mercadolibre.com.ar/jm/item?site=MLA&id=123456789";
-    var urlLastCategPath = "";
-    var categId= "##CATEG_ID##";
-    var productId = "0";
-    var valBidSeq = "##VAL_BID_SEQ##";
-    var urlJSSL = "##URL_JSSL##";
-    var cantFotosCargadas = 0;
-    var vid = "";
-    var totalFotos = 0;
-    var srcMainImg = "http://www.mercadolidesa.com.ar/jm/img?s=MLA&f=artsinfoto.gif&v=E";
-    var rotacionDeImagenes = false;
-  %script{ :language => "javascript" }
-    var atlasPoolSufix = "_PA";
-    var urlBaseAtlas = "";
-    var atlasPoolSufixForRegInt = "_PA";
-  %script
-    var urlBase = "http://"+window.location.host;
-    
-    var contentIsEnabled	= true;
-    var autocenterIsEnabled	= true;
-    var loadingIsEnabled	= true;
-    
-    var cnt_width  = '790px';
-    var cnt_src    = urlBase+'/jm/item?act=confirmBid&vip3=Y&id=123456789&site=MLA';
-    var img_src    = 'http://img.mlstatic.com/org-img/vip3/layer/loading230x180.gif';
-    
-    var loading_width  = '230px';
-    var loading_height = '180px';
-    
-    \//var loading_width  = '32' + 'px'
-    \//var loading_height = '32' + 'px'
-    
-    var image = new Image();
-    image.src = 'http://img.mlstatic.com/org-img/vip3/layer/loading230x180.gif';
+  = stylesheet_link_tag 'reset'
+  = stylesheet_link_tag 'base'
+  = stylesheet_link_tag 'vip'
+  /%link{ :href => "/stylesheets/reset.css", :type => "text/css", :rel => "stylesheet" }
+  /%link{ :href => "/stylesheets/base.css", :type => "text/css", :rel => "stylesheet" }
+  /%link{ :href => "/stylesheets/vip.css", :type => "text/css", :rel => "stylesheet" }

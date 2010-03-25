@@ -1,14 +1,11 @@
-!!! Strict
-%html
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
   = render :partial => "common/header"
   %body
-    %center
-      #containall
-        = render :partial => "common/ml_menu"
-        = yield
-        = render :partial => "common/footer"
-        %br
-        %br
+    #layout
+      = render :partial => "common/ml_menu"
+      = yield
+      = render :partial => "common/footer"
     %center
       gen:
       = t('app.render_time') % ((Time.now - @stamp)*1000)
