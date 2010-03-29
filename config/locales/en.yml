@@ -1,106 +1,139 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
-  hello: "Hello world"
-  descripcion: "Description"
-  inicio: "Index"
-  registrate: "Sign Up"
-  vender: "Sell your item"
-  mi_ml: "My MercadoLibre"
-  ayuda: "Help"
-  precio: "Price"
-  ubicacion: "Location"
-  tucompra: "Your purchase is protected"
-  vendedor: "Seller"
-  calificacion: "Calification"
-  puntos: "Points"
-  ventas: "Sells on this article"
-  publicacion: "Item"
-  sobre_ml: "About MercadoLibre"
-  mapa: "Site Map"
-  politicas: "Politics"
-  centro: "Security center"
-  programa: "Buyer protection program"
-  opiniones: "Catalog and reviews"
-  argentina: "Argentina"
-  brasil: "Brazil"
-  colombia: "Colombia"
-  costarica: "Costa Rica"
-  chile: "Chile"
-  ebay: "eBay"
-  ecuador: "Ecuador"
-  mexico: "Mexico"
-  panama: "Panama"
-  peru: "Peru"
-  repdominicana: "Rep. Dominicana"
-  uruguay: "Uruguay"
-  venezuela: "Venezuela"
-  preferencia_pago: "Shipping and payment preferences"
-  texto_pago: "Payment"
-  texto_envio: "Shipping"
-  texto_cuotas: "Up to 12 payments with Hipotecario, Standard and Patagonia credit cards"
-  hasta: until ${{valor}}
-  
-  catalog:
-    product:
-      tab: "Tecnical specs"
-      title: "Specs"
-      print: "Print specs"
-    reviews:
-      tab:
-        one: "1 review"
-        other: '{{count}} reviews'
-      title: "Reviewes"
-      promedio: "Average"
-      resumen:
-        one: "over <b>1 review</b>"
-        other: 'over <b>{{count}} reviews</b>'
-      distribucion: "Points distribution"
-      puntaje: "Poings"
-      opiniones: "Reviews"
-      autor: "Author"
-      pros: "Pros"
-      contras: "Conts"
-      conclusion: "Conclusion"
-      util: "Was this review useful?"
-      resume:
-        one: "over 1 user <b>evaluated this review as useful</b>"
-        other: "over {{count}} users <b>evaluated this review as useful</b>"
-      denuncia: "Denounce review"
-
-  questions:
-    questions_to_seller: "Questions to seller"
-    buyer_califications: "Buyer calificattions"
-    question: "Question"
-    answer: "Answer"
-    denounce: "Denounce"
-    ask_a_seller: "Ask seller a question"
-
-  califications:
-    calif: "Califications received from the sale of this article."
-    view_all: "View all califications"
- 
-  app:
-    render_time: %0.0f ms
-
-  time:
-    formats:
+en: 
+  inicio: Inicio
+  registrate: Registrate
+  vender: Vender
+  mi_ml: Mi MercadoLibre
+  ayuda: Ayuda
+  precio: Precio
+  ubicacion: Ubicacion
+  tucompra: Tu compra esta protegida
+  vendedor: Vendedor
+  calificacion: Calificacion del vendedor
+  puntos: Puntos
+  ventas: Ventas de este articulo
+  descripcion: Descripcion
+  publicacion: Publicacion
+  sobre_ml: Sobre MercadoLibre
+  mapa: Mapa del sitio
+  politicas: Politicas
+  centro: Centro de seguridad
+  programa: Programa de Proteccion al Comprador
+  opiniones: Opiniones y Catalogo
+  argentina: Argentina
+  brasil: Brasil
+  colombia: Colombia
+  costarica: Costa Rica
+  chile: Chile
+  ebay: eBay
+  ecuador: Ecuador
+  mexico: Mexico
+  panama: Panama
+  peru: Peru
+  repdominicana: Rep. Dominicana
+  uruguay: Uruguay
+  venezuela: Venezuela
+  preferencia_pago: Preferencias de pago y envio
+  texto_pago: Pago
+  texto_envio: Envio
+  texto_cuotas: Hasta 12 cuotas sin interes con tarjetas del Hipotecario, Standard y Patagonia
+  hasta: hasta ${{valor}}
+  catalog: 
+    product: 
+      tab: Ficha tecnica
+      title: Especificaciones
+      print: Imprimir ficha tecnica
+    reviews: 
+      tab: 
+        one: 1 opinion
+        other: "{{count}} opiniones"
+      title: Opiniones
+      promedio: Promedio
+      resumen: 
+        one: de <b>1 opinion</b>
+        other: de <b>{{count}} opiniones</b>
+      distribucion: Distribuci?n del puntaje
+      puntaje: Puntaje
+      opiniones: Opiniones
+      autor: Autor
+      pros: Pros
+      contras: Contras
+      conclusion: Conclusion
+      util: ?Te resulto util esta opini?n?
+      resume: 
+        one: de 1 usuario <b>voto como util esta opinion</b>
+        other: de {{count}} usuarios <b>votaron como util esta opinion</b>
+      denuncia: Denunciar opinion
+  questions: 
+    questions_to_seller: Preguntas al vendedor
+    buyer_califications: Calificaciones de compradores
+    question: Pregunta
+    answer: Respuesta
+    denounce: Denunciar
+    ask_a_seller: Hacer una pregunta al vendedor
+  califications: 
+    calif: Calificaciones recibidas por la venta de este articulo.
+    view_all: Ver todas las calificaciones
+  app: 
+    render_time: "%0.0f ms"
+  time: 
+    pm: pm
+    formats: 
       default: "%dd-%mm-%YYYY"
-      short: "%m/%d/%Y %H:%M"
-
-  date:
-    formats:
+      short: "%d/%m/%Y %H:%M"
+  date: 
+    abbr_day_names: 
+    - Dom
+    - Lun
+    - Mar
+    - Mie
+    - Jue
+    - Vie
+    - Sab
+    abbr_month_names: 
+    - 
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+    day_names: 
+    - Domingo
+    - Lunes
+    - Martes
+    - Miercoles
+    - Jueves
+    - Viernes
+    - Sabado
+    month_names: 
+    - 
+    - Enero,Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    pm: pm
+    formats: 
       default: "%dd-%mm-%YYYY"
-      short: "%b %d"
-
-  items_seller:
-    more_items: "More items from seller"
-    view_more: "View more"
-
-  education:
-    learn: "Learn about MercadoLibre"
-    how_to_buy: "How to buy"
-    advices: "Advices for a succesful transaction"
-    why_ml: "Why MercadoLibre is safe"
-    how_pay: "How I pay my purchase"
+      short: "%d/%m/%Y %H:%M"
+  items_seller: 
+    more_items: Mas publicaciones del vendedor
+    view_more: Ver mas
+  education: 
+    learn: Aprende sobre MercadoLibre
+    how_to_buy: Como Comprar
+    advices: Consejos para una transaccion exitosa
+    why_ml: Por que MercadoLibre es seguro
+    how_pay: Como pago mi compra
