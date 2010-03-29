@@ -1,0 +1,106 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  descripcion: "Description"
+  inicio: "Index"
+  registrate: "Sign Up"
+  vender: "Sell your item"
+  mi_ml: "My MercadoLibre"
+  ayuda: "Help"
+  precio: "Price"
+  ubicacion: "Location"
+  tucompra: "Your purchase is protected"
+  vendedor: "Seller"
+  calificacion: "Calification"
+  puntos: "Points"
+  ventas: "Sells on this article"
+  publicacion: "Item"
+  sobre_ml: "About MercadoLibre"
+  mapa: "Site Map"
+  politicas: "Politics"
+  centro: "Security center"
+  programa: "Buyer protection program"
+  opiniones: "Catalog and reviews"
+  argentina: "Argentina"
+  brasil: "Brazil"
+  colombia: "Colombia"
+  costarica: "Costa Rica"
+  chile: "Chile"
+  ebay: "eBay"
+  ecuador: "Ecuador"
+  mexico: "Mexico"
+  panama: "Panama"
+  peru: "Peru"
+  repdominicana: "Rep. Dominicana"
+  uruguay: "Uruguay"
+  venezuela: "Venezuela"
+  preferencia_pago: "Shipping and payment preferences"
+  texto_pago: "Payment"
+  texto_envio: "Shipping"
+  texto_cuotas: "Up to 12 payments with Hipotecario, Standard and Patagonia credit cards"
+  hasta: until ${{valor}}
+  
+  catalog:
+    product:
+      tab: "Tecnical specs"
+      title: "Specs"
+      print: "Print specs"
+    reviews:
+      tab:
+        one: "1 review"
+        other: '{{count}} reviews'
+      title: "Reviewes"
+      promedio: "Average"
+      resumen:
+        one: "over <b>1 review</b>"
+        other: 'over <b>{{count}} reviews</b>'
+      distribucion: "Points distribution"
+      puntaje: "Poings"
+      opiniones: "Reviews"
+      autor: "Author"
+      pros: "Pros"
+      contras: "Conts"
+      conclusion: "Conclusion"
+      util: "Was this review useful?"
+      resume:
+        one: "over 1 user <b>evaluated this review as useful</b>"
+        other: "over {{count}} users <b>evaluated this review as useful</b>"
+      denuncia: "Denounce review"
+
+  questions:
+    questions_to_seller: "Questions to seller"
+    buyer_califications: "Buyer calificattions"
+    question: "Question"
+    answer: "Answer"
+    denounce: "Denounce"
+    ask_a_seller: "Ask seller a question"
+
+  califications:
+    calif: "Califications received from the sale of this article."
+    view_all: "View all califications"
+ 
+  app:
+    render_time: %0.0f ms
+
+  time:
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%m/%d/%Y %H:%M"
+
+  date:
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%b %d"
+
+  items_seller:
+    more_items: "More items from seller"
+    view_more: "View more"
+
+  education:
+    learn: "Learn about MercadoLibre"
+    how_to_buy: "How to buy"
+    advices: "Advices for a succesful transaction"
+    why_ml: "Why MercadoLibre is safe"
+    how_pay: "How I pay my purchase"
