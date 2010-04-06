@@ -1,7 +1,19 @@
 class Category < ActiveRecord::Base
-	belongs_to :category
-	has_many :items
-	has_many :categories
+  belongs_to :category
+  has_many :items
+  has_many :categories
+
+  def tree
+    parents = []
+    category = self
+
+    while category
+      parents << category
+      category = category.category
+    end
+
+    parents.reverse
+  end
 end
 
 # == Schema Information

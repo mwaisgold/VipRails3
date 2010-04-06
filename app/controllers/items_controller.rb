@@ -21,28 +21,19 @@ class ItemsController < ApplicationController
     @shipMethods = @item.ship_methods
     @paymentMethods = @item.payment_methods
 
-    @categories = Array.new
-    category = @item.category
-    while (!category.nil?)
-     @categories.insert(0,category)
-     category = category.category
-    end
+    @categories = @item.category.tree
 
     @califications = @item.califications
     @product = @item.catalog_product
-    @product.calculate_reviews_summary
     @reviews = @product.reviews
-    @catalogProductAttrs = @product.catalog_product_attributes
+    @catalog_product_attrs = @product.catalog_product_attributes
 
-    @items_seller = @item.items_seller(@customer.id, @item.id)
+    @items_seller = @item.items_seller
 
      respond_to do |format|
-       format.html # show.html.erb
-       format.xml  {
-         text = @item.to_xml :include => [:customer, :questions, :category, :califications, :catalog_product, :reviews]
-         render :xml => text
-       }
-       format.json { render :json => @item.to_json(:include => [:customer, :questions, :category, :califications, :catalog_product, :reviews] )}
+       format.html
+       format.xml { render :xml => @item.to_xml }
+       format.json { render :json => @item.to_json }
      end
   end
 

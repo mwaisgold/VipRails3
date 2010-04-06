@@ -25,7 +25,7 @@
           %h2
             = t 'catalog.product.title'
         #attr
-          - for attribute in @catalogProductAttrs do
+          - for attribute in @catalog_product_attrs do
             %ul.ul_simple
               %li.li_simple
                 %b
@@ -37,7 +37,7 @@
           %a{ :href => "javascript:print();" }
             = t 'catalog.product.print'
         .Spacer
-  #reviewsTab.contentbox{ :style => "display: none;" }
+  #reviewsTab.contentbox
     #solopis
       .fondo
         %h2
@@ -49,7 +49,7 @@
           %h3
             = t 'catalog.reviews.promedio'
           %span.promedio
-            %img{ :src => "http://img.mlstatic.com/org-img/reviews/#{@product.get_balls_image_link}BALLSON.gif", :align => "absbottom" }
+            != balls_image_link(@product)
             %br
             = t 'catalog.reviews.resumen', :count => @reviews.length
         #distribucion
@@ -60,31 +60,13 @@
             %br
             .lblquant
               = t 'catalog.reviews.opiniones'
-          .colstar
-            %img{ :src => "http://img.mlstatic.com/org-img/reviews/5BALLSON.gif", :align => "absbottom" }
-            %br
-            .quant
-              = @product.qty5
-          .colstar
-            %img{ :src => "http://img.mlstatic.com/org-img/reviews/4BALLSON.gif", :align => "absbottom" }
-            %br
-            .quant
-              = @product.qty4
-          .colstar
-            %img{ :src => "http://img.mlstatic.com/org-img/reviews/3BALLSON.gif", :align => "absbottom" }
-            %br
-            .quant
-              = @product.qty3
-          .colstar
-            %img{ :src => "http://img.mlstatic.com/org-img/reviews/2BALLSON.gif", :align => "absbottom" }
-            %br
-            .quant
-              = @product.qty2
-          .colstar
-            %img{ :src => "http://img.mlstatic.com/org-img/reviews/1BALLSON.gif", :align => "absbottom" }
-            %br
-            .quant
-              = @product.qty1
+
+          - 5.downto(1) do |index|
+            .colstar
+              %img(src="http://img.mlstatic.com/org-img/reviews/#{index}BALLSON.gif" align="absbottom")
+              %br
+              .quant= @product.scores[index]
+
         #separador
         .Spacer
       .Spacer

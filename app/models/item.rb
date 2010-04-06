@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  INCLUDES = { :include => [:customer, :questions, :category, :califications, :catalog_product, :reviews] }
+
   belongs_to :site
   has_many :questions
   belongs_to :customer
@@ -9,17 +11,12 @@ class Item < ActiveRecord::Base
   has_many :reviews, :through => :catalog_product
   belongs_to :catalog_product
 
-  #Valido los campos que no pueden ser nulos
   validates_presence_of :site_id, :title, :price, :bids_count
-  #Valido la numericalidad del precio
   validates_numericality_of :price
-  #La cantidad de items solo puede ser un número entero
   validates_numericality_of :bids_count, :only_integer => true
-  #Valido que el item_id sea unico para cuada site
-  # validates_uniqueness_of :item_id, :scope => :site_id
-  #Valido que el site_id exista
   validate :site_id_from_item_must_exists
-  #, :customer_must_exist_in_ml
+
+  scope :today, lambda { where "created_at > ?", 1.day.ago }
 
   def site_id_from_item_must_exists
     errors.add(:site_id, "Debe existir el site") if self.site == nil
@@ -30,8 +27,16 @@ class Item < ActiveRecord::Base
   end
 
   # Trae los demas items de un customer
-  def items_seller (customer_id, item_id)
-    Item.all(:conditions => ["customer_id = ? and id <> ?", customer_id, item_id], :limit => 5)
+  def items_seller(limit = 5)
+    customer.items.all(conditions: "id <> #{id}", limit: limit)
+  end
+
+  def to_xml
+    super(INCLUDES)
+  end
+
+  def to_json
+    super(INCLUDES)
   end
 
 #  def get_customer

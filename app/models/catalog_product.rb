@@ -1,26 +1,22 @@
+require "core_ext"
+
 class CatalogProduct < ActiveRecord::Base
   has_many :items
   has_many :catalog_product_attributes
   has_many :reviews
-  attr_reader :qty5, :qty4, :qty3, :qty2, :qty1, :prom
 
-  def calculate_reviews_summary
-    suma = @qty5 = @qty4 = @qty3 = @qty2 = @qty1 = 0;
-
-    for review in self.reviews do
-      eval("@qty" +review.points.to_s + "+=1")
-      suma+=review.points
-    end
-
-    @prom = ((suma * 2) / self.reviews.length).round / 2.to_f
+  def average_score
+    @average_score ||= ((total_scores * 2) / reviews.length).round / 2.to_f
   end
 
-  def get_balls_image_link
-    if @prom.to_i != @prom.ceil
-      return @prom.to_s.delete "."
-    else
-      return @prom.to_i
+  def total_scores
+    @total_scores ||= scores.inject(0) do |accum, (point, group)|
+      accum + point * group
     end
+  end
+
+  def scores
+    @scores ||= reviews.count_by(&:points)
   end
 end
 
@@ -33,4 +29,3 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
-
