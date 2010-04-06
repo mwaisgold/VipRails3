@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :take_stamp
 
+  def authenticate
+    redirect_to controller: :login, url_to: request.request_uri unless cookies[:cookie_login]
+  end
 
   def take_stamp
     @stamp = Time.new

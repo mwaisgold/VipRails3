@@ -1,0 +1,6 @@
+<h1>Ingrese sus datos para comprar el articulo</h1>
+<% form_tag action: "do_login" do  %>
+  <%= text_field_tag(:name) %>
+  <%= hidden_field_tag(:url_to, params[:url_to]) %>
+  <%= submit_tag "Login" %>
+<% end %>
