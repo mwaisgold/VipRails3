@@ -1,0 +1,4 @@
+<h1><%= @item.title %></h1>
+<p>Felicitaciones <%= @name %>, has comprado el articulo</p>
+<%= link_to "Volver al articulo", @item %>
+<%= link_to "Salir", controller: "login", action: "logout" %>

@@ -77,8 +77,8 @@
         Vendidos:
       %dd
         = @item.bids_count
-    %form.formComprar{ :method => "get", :action => "" }
-      %input.btn_nivel1{ :type => "button", :value => "Comprar" }
+    %form.formComprar{ :method => "get", :action => "/items/buy/#{@item.id}" }
+      %input.btn_nivel1{ :type => "submit", :value => "Comprar" }
     #reputacion
       %h2
         Conoce al vendedor
