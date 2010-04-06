@@ -17,6 +17,7 @@ Review.delete_all
 Question.delete_all
 Calification.delete_all
 Site.delete_all
+Category.delete_all
 
 total = (ENV["ITEMS"] || 1).to_i
 
@@ -28,6 +29,10 @@ ActiveRecord::Base.transaction do
   @attr = CatalogProductAttribute.create key: "Wifi", value: "(802.11b/g)"
   @product.catalog_product_attributes << @attr
   @product.save
+
+  categ1 = Category.create name: "Autos motos", accept_items: false
+  categ2 = Category.create name: "Autos", accept_items: false, category: categ1
+  @categ_hoja = Category.create name: "Ford", accept_items: true, category: categ2
 
   @customer_review = Customer.create nickname: "customerReview", points: 95, qty_calif: 100
   @review = Review.create title: "Titulo de review", pros: "prossss", contras: "contrass", customer: @customer_review, catalog_product: @product, qty_votes: 10, qty_pos: 5, points: 4, conclusion: "conclusion"
@@ -43,7 +48,7 @@ ActiveRecord::Base.transaction do
     end
 
     @calification = Calification.create customer: @customer2, item: @item, texto_calif: "todo barbaro", value_calif: 1, fecha: Time.now
-
+    @item.category = @categ_hoja
     @item.catalog_product = @product
     @item.payment_methods << @paymentMethod
     @item.ship_methods << @shipMethod
